@@ -1,0 +1,23 @@
+
+*{
+     font-family: "Montserrat", sans-serif;
+     margin: 0;
+     background-color: white;
+
+}
+.main{
+    
+    height: 100vh;
+}
+.head{
+    background-color: pink;
+    height: 130px;
+}
+.content{
+    background-color: skyblue;
+
+}
+.foot{
+    background-color: plum;
+    height: 457px;
+}
