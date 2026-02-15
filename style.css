@@ -21,3 +21,28 @@
     background-color: plum;
     height: 457px;
 }
+.upper {
+    height: 44px;
+    width: 100%;
+    display: flex;
+    gap: 90px; 
+    background-color: red;   /* your red background */
+    
+    align-items: center;     /* vertically centers icons & text */
+    justify-content: center; /* centers the whole group horizontally */
+    
+    color:black;            /* makes text & icons white */
+    padding: 0 15px;         /* optional: small left/right padding */
+    font-size: 16px;         /* adjusts text size */
+}
+
+/* Ensure icons inherit the white color */
+.upper i {
+    color: inherit;
+    cursor: pointer;        /* optional: shows pointer on hover */
+}
+
+/* Optional: remove default margin on paragraph */
+.upper p {
+    margin: 0;
+}
