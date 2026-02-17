@@ -3,14 +3,20 @@
      font-family: "Montserrat", sans-serif;
      margin: 0;
      background-color: white;
+     
+    box-sizing: border-box;
+
+
 
 }
+
+
 .main{
     
     height: 100vh;
 }
 .head{
-    background-color: pink;
+   
     height: 130px;
 }
 .content{
@@ -22,27 +28,62 @@
     height: 457px;
 }
 .upper {
+  
     height: 44px;
     width: 100%;
     display: flex;
-    gap: 90px; 
-    background-color: red;   /* your red background */
+    gap: 130px; 
+       background-color: #e11c59;
+    align-items: center;     
+    justify-content: center; 
     
-    align-items: center;     /* vertically centers icons & text */
-    justify-content: center; /* centers the whole group horizontally */
-    
-    color:black;            /* makes text & icons white */
-    padding: 0 15px;         /* optional: small left/right padding */
-    font-size: 16px;         /* adjusts text size */
+    color:black;            
+    padding: 0 15px;         
+    font-size: 16px;         
 }
 
-/* Ensure icons inherit the white color */
+
 .upper i {
     color: inherit;
-    cursor: pointer;        /* optional: shows pointer on hover */
+   
 }
 
-/* Optional: remove default margin on paragraph */
+
 .upper p {
     margin: 0;
+    background-color: #e11c59;
+    color:white;
+}
+.nav{
+    align-items: center;
+    display: flex;
+    height: 82px;
+     padding: 0 10%;   
+    color: black;
+    margin: 0 auto; 
+    gap: 20px;
+}
+#logo{
+    height: 50px;
+   
+}
+
+#left{
+    background-color:#e11c59;
+    color: white;
+}
+#right{
+    background-color:#e11c59;
+       color: white;
+}
+a{
+    text-decoration: none;
+    color: black;
+
+}
+.icons{
+    color: black;
+    margin-left: auto;
+    display: flex;
+    gap: 30px;
 }
