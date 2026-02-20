@@ -87,3 +87,101 @@ a{
     display: flex;
     gap: 30px;
 }
+/* main container */
+.slider{
+    width:100%;
+    height:230px;
+    overflow:hidden;
+    position:relative;
+}
+
+/* sliding track */
+.slides{
+    display:flex;
+    height:230px;
+    animation: slide 16s infinite;
+}
+
+/* each image */
+.slides img{
+    width:100vw;        /* each image takes full screen width */
+    height:230px;     
+    object-fit:cover;   /* crop, not stretch */
+     /* VERY IMPORTANT — stops squeezing */
+}
+@keyframes slide{
+
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(0); }
+
+    25%  { transform: translateX(-100vw); }
+    45%  { transform: translateX(-100vw); }
+
+    50%  { transform: translateX(-200vw); }
+    70%  { transform: translateX(-200vw); }
+
+    75%  { transform: translateX(-300vw); }
+    95%  { transform: translateX(-300vw); }
+
+    100% { transform: translateX(0); }
+}
+.category{
+    padding: 24px 50px 36px;
+    height: 478px;
+ 
+  
+}
+.heading{
+    margin: 30px 0px 10px;
+    font-size: 20px;
+   
+}
+.icecreams{
+    display: flex;
+    gap: 8px; 
+    justify-content: space-between; 
+    height: 326px;
+    width: 100%; 
+  
+   
+    
+    
+}
+
+.icecreams .card {
+  
+    flex: 1; 
+    overflow: hidden;
+}
+.icecreams .card img {
+    width: 100%;        /* make image full width of card */
+    height: 100%;   
+    transition: transform 0.3s ease; /* smooth transition */
+    transform: scale(1); 
+    object-fit: cover;
+     
+}
+.imgwrap:hover img {
+    transform: scale(1.1); /* slightly zoom out */
+}    
+.imgwrap {
+    width: 100%;
+    height: 230px;       
+    overflow: hidden;   
+ 
+}
+.card-text{
+margin-top: 10px;
+}
+/* seller */
+.seller{
+    height: 666px;
+    background-color: beige;
+      padding: 24px 50px 36px;
+  
+}
+.arrows{
+    text-align: center;
+    gap: 10%;
+    height: 32px;
+}
