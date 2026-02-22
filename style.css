@@ -19,10 +19,7 @@
    
     height: 130px;
 }
-.content{
-    background-color: skyblue;
 
-}
 .foot{
     background-color: plum;
     height: 457px;
@@ -88,43 +85,53 @@ a{
     gap: 30px;
 }
 /* main container */
+/* window */
 .slider{
     width:100%;
-    height:230px;
+    height:450px;
     overflow:hidden;
     position:relative;
 }
 
-/* sliding track */
+/* long moving strip */
 .slides{
     display:flex;
-    height:230px;
+    width:400%;              /* 4 images = 400% */
+    height:100%;
     animation: slide 16s infinite;
 }
 
-/* each image */
-.slides img{
-    width:100vw;        /* each image takes full screen width */
-    height:230px;     
-    object-fit:cover;   /* crop, not stretch */
-     /* VERY IMPORTANT — stops squeezing */
+/* each slide = EXACTLY screen width */
+.slide{
+    width:100%;
+    height:100%;
+    flex-shrink:0;           /* MOST IMPORTANT LINE */
+}
+
+/* image fills slide */
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
 }
 @keyframes slide{
 
-    0%   { transform: translateX(0); }
-    20%  { transform: translateX(0); }
+    0%   { transform: translateX(0%); }
+    20%  { transform: translateX(0%); }
 
-    25%  { transform: translateX(-100vw); }
-    45%  { transform: translateX(-100vw); }
+    25%  { transform: translateX(-100%); }
+    45%  { transform: translateX(-100%); }
 
-    50%  { transform: translateX(-200vw); }
-    70%  { transform: translateX(-200vw); }
+    50%  { transform: translateX(-200%); }
+    70%  { transform: translateX(-200%); }
 
-    75%  { transform: translateX(-300vw); }
-    95%  { transform: translateX(-300vw); }
+    75%  { transform: translateX(-300%); }
+    95%  { transform: translateX(-300%); }
 
-    100% { transform: translateX(0); }
+    100% { transform: translateX(0%); }
 }
+/* category */
 .category{
     padding: 24px 50px 36px;
     height: 478px;
@@ -161,10 +168,10 @@ a{
     object-fit: cover;
      
 }
-.imgwrap:hover img {
+.Cat-imgwrap:hover img {
     transform: scale(1.1); /* slightly zoom out */
 }    
-.imgwrap {
+.Cat-imgwrap {
     width: 100%;
     height: 230px;       
     overflow: hidden;   
@@ -173,10 +180,10 @@ a{
 .card-text{
 margin-top: 10px;
 }
-/* seller */
+/* best seller */
+
 .seller{
     height: 666px;
-    background-color: beige;
       padding: 24px 50px 36px;
   
 }
@@ -184,4 +191,139 @@ margin-top: 10px;
     text-align: center;
     gap: 10%;
     height: 32px;
+    
+}
+.arrows i{
+    background-color: white;
+    height: 15px;
+   
+}
+.purpbut{
+     text-align: center;
+}
+
+.button {
+    display: inline-flex;        /* inline-flex works with text-align center */
+    justify-content: center;     /* center text horizontally */
+    align-items: center;         /* center text vertically */
+    padding: 12px 24px;
+    background-color: purple;
+    color: white;
+    font-size: 16px;
+    
+    cursor: pointer;
+
+}
+/* """"""""scards""""""""" */
+/* Horizontal scroll container */
+.scards-container {
+    overflow-x: auto;               /* scroll horizontally */
+    scroll-snap-type: x mandatory;  /* snap each card */
+    scroll-behavior: smooth;        /* smooth scrolling */
+    padding: 16px 0;
+    
+}
+
+/* Wrapper for cards */
+.scards {
+    display: flex;
+    gap: 10px;                       /* spacing between cards */
+}
+
+/* Individual card */
+.scard {
+    flex: 0 0 350px;                 /* fixed width for each card */
+    height: 420px;
+    scroll-snap-align: start;        /* snap position */
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: white;         /* optional card bg */
+    
+}
+.scards-container::-webkit-scrollbar {
+    height: 5px;           
+}
+/* Image wrapper for hover effect */
+.imgwrap {
+    width: 100%;
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Normal image */
+.imgwrap img.normal {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover image (hidden initially) */
+.imgwrap img.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Hover effect */
+.scard:hover img.hover-img {
+    opacity: 1;
+    transform: scale(1.1);  /* zoom effect */
+}
+
+.scard:hover img.normal {
+    opacity: 0;
+}
+
+/* Card text below image */
+.scard-text {
+    text-align: left;
+ 
+    padding: 8px;
+    font-weight: 500;
+}
+.scard-text a p{
+    margin-bottom: 10px;
+}
+.scard-text a {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+}
+.scard-text p:hover{
+    text-decoration: underline;
+}
+.scard-text p {
+    margin: 4px 0 0;
+    color: #555;
+    font-size: 14px;
+}
+.instagram{
+    margin-top: 20px;
+     padding: 24px 50px 36px;
+    height: 478px;
+    font: 40px;
+    margin-bottom: 20px;
+   
+}
+.insta-Img{
+    display: flex;
+    gap: 5%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+
+}
+.insta-Img img{
+    height: 250px;
+    width: 250px;
 }
