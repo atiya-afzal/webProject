@@ -22,7 +22,7 @@
 
 .foot{
     background-color: plum;
-    height: 457px;
+    height: 600px;
 }
 .upper {
   
@@ -326,4 +326,110 @@ margin-top: 10px;
 .insta-Img img{
     height: 250px;
     width: 250px;
+}
+/* text */
+.text{
+    
+    margin-top: 70px;
+
+    text-align: center;
+    height: 410px;
+    padding-left: 40px;
+     padding-top: 40px;
+      padding-right: 40px;
+    
+}
+.text h1{
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+.text p{
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+.text a{
+    color: purple;
+    font-weight: bold;
+    margin-top: 30px;
+}
+/* footer */
+.details{
+height: 310px;
+width: auto;
+
+display: flex;
+box-sizing: border-box;
+}
+#logo{
+
+flex: 1;
+
+
+}
+.imglogo{
+    margin-left: 200px;   /* space from left */
+margin-top: 100px;
+}
+#logo img{
+width: 120px;   /* control image width */
+height: auto;
+}
+#links{
+
+flex: 1;
+margin-left: 10px;
+margin-top: 20px;
+line-height: 1.9;
+}
+#links h5{
+margin-bottom: 15px;   /* space below heading */
+}
+#links a:hover{
+text-decoration: underline;
+font-weight: bold;
+}
+#cntct{
+margin-left: 10px;
+margin-top: 20px;
+
+flex: 1;
+font-size: large;
+
+}
+#cntct a{
+    text-decoration: underline;
+}
+#cntct a:hover{
+text-decoration-thickness: 2px; 
+}
+.reach{
+    display: flex;
+}
+#email{
+    margin-left: 80px;
+}
+#text{
+    
+    border: 1px solid black;
+    height: 50px;
+    width: 300px;
+}
+#email input{
+    border: none;
+    outline: none; 
+}
+#copyright{
+    height: 100px;
+    background-color: pink;
+    margin-bottom: 0;
+    display: flex;
+     justify-content: center;     /* horizontal centering */
+    align-items: center; 
+
+    
+}
+#copyright img{
+    height: 100px;
+    width: 100px;
+    
 }
