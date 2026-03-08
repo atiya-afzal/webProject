@@ -20,10 +20,11 @@
     height: 130px;
 }
 
-.foot{
-    background-color: plum;
-    height: 600px;
+.foot {
+    height: auto; /* let it shrink to fit content */
+    padding: 0;   /* remove extra padding */
 }
+
 .upper {
   
     height: 44px;
@@ -86,37 +87,35 @@ a{
 }
 /* main container */
 /* window */
-.slider{
-    width:100%;
-    height:450px;
-    overflow:hidden;
-    position:relative;
+.slider {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
 }
 
-/* long moving strip */
-.slides{
-    display:flex;
-    width:400%;              /* 4 images = 400% */
-    height:100%;
-    animation: slide 16s infinite;
+.slides {
+    display: flex;
+    width: 400%;           /* 4 slides = 400% */
+    height: 100%;
+    animation: slide 20s infinite;  /* 20s for 4 slides = 5s per slide */
 }
 
-/* each slide = EXACTLY screen width */
-.slide{
-    width:100%;
-    height:100%;
-    flex-shrink:0;           /* MOST IMPORTANT LINE */
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+    height: 100%;
 }
 
-/* image fills slide */
-.slide img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+.slide img {
+    width: 100%;
+    height: auto;         /* height adjusts to image naturally */
+    display: block;
+    object-fit: cover;    /* crops slightly if needed */
 }
-@keyframes slide{
 
+/* Keyframes: each 25% = one slide */
+@keyframes slide {
     0%   { transform: translateX(0%); }
     20%  { transform: translateX(0%); }
 
@@ -131,6 +130,7 @@ a{
 
     100% { transform: translateX(0%); }
 }
+
 /* category */
 .category{
     padding: 24px 50px 36px;
@@ -348,9 +348,9 @@ margin-top: 10px;
     line-height: 1.8;
 }
 .text a{
-    color: purple;
     font-weight: bold;
     margin-top: 30px;
+   color: purple;
 }
 /* footer */
 .details{
@@ -403,33 +403,53 @@ font-size: large;
 text-decoration-thickness: 2px; 
 }
 .reach{
-    display: flex;
+    margin-left: 80px;
+    
+    height: 100px;
 }
 #email{
-    margin-left: 80px;
+
+
+    display: flex;
+     justify-content: space-between;
 }
 #text{
     
     border: 1px solid black;
     height: 50px;
     width: 300px;
+    display: flex;
+    justify-content: space-between;
+     align-items: center;
 }
-#email input{
+
+#text input{
     border: none;
     outline: none; 
 }
+.social{
+      display: flex;
+    gap: 15px;  
+    margin-right: 100px;
+    align-items: center;
+    
+}
 #copyright{
     height: 100px;
-    background-color: pink;
+  
     margin-bottom: 0;
     display: flex;
-     justify-content: center;     /* horizontal centering */
-    align-items: center; 
+    justify-content: center;   /* center text horizontally */
+    align-items: center;   
+
+    position: relative;
+
 
     
 }
-#copyright img{
-    height: 100px;
-    width: 100px;
+#copyright i{
+position: fixed;
+bottom: 40px;
+right: 20px;
     
 }
