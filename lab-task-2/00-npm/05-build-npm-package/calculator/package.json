@@ -1,0 +1,15 @@
+{
+  "name": "calculator-musmanakram",
+  "version": "1.0.0",
+  "description": "Demo calculator for class demonstration",
+  "keywords": [
+    "Demo"
+  ],
+  "license": "ISC",
+  "author": "Usman",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
