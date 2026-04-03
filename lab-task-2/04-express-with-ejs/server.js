@@ -22,6 +22,9 @@ app.get("/", function (req, res) {
   return res.render("homepage");
 });
 
+app.get("/hobbies", (req, res) => {
+  res.render("hobbies");
+});
 // Start the server on port 3000
 app.listen(3000, function () {
   console.log("Server Started at localhost:3000");
