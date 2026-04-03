@@ -13,7 +13,7 @@
 
 .main{
     
-    height: 100vh;
+    height: auto;
 }
 .head{
    
@@ -52,8 +52,17 @@
     background-color: #e11c59;
     color:white;
 }
-.nav{
+.nav {
     align-items: center;
+    display: flex;
+    height: 82px;
+     padding: 0 10%;   
+    color: black;
+    margin: 0 auto; 
+    gap: 20px;
+}
+#navlinks{
+      align-items: center;
     display: flex;
     height: 82px;
      padding: 0 10%;   
@@ -455,66 +464,143 @@ right: 20px;
 }
 
 
+/* Hide hamburger on desktop by default */
+.hamburger {
+    display: none;      /* hide on desktop */
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 0;     /* removes extra vertical space */
+}
+
 /* Responsive styles for mobile devices */
 
 
 /* Mobile / tablet view */
+
 @media screen and (max-width: 768px) {
-  
-  /* Make the nav stack vertically */
+    /* Show hamburger on mobile/tablet */
+.hamburger {
+    display: block;
+}
+.nav-links {
+    display: none;          /* hidden initially */
+    flex-direction: column; /* stack links vertically */
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+  /* Prevent horizontal scrolling */
+  body {
+      overflow-x: hidden;
+  }
+
+  /* Nav stack vertically and center */
   .nav {
       flex-direction: column;
       gap: 10px;
       padding: 10px;
+      align-items: center; /* center nav items */
+      margin: 0 auto;
+      width: 100%;
   }
 
-  /* Slider height smaller for mobile */
+  /* Slider smaller and centered */
   .slider {
       height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
   }
 
-  /* Category cards stack vertically */
+  /* Category cards stack vertically and centered */
   .icecreams {
-      flex-direction: column;
-      gap: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center; /* center cards */
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 10px; /* avoid sticking to edge */
   }
+
   .icecreams .card {
-      width: 100%;  /* full width */
-      height: auto; /* adjust height automatically */
+      width: 48%;
+      height: auto;
+      margin: 0 auto; /* center each card */
   }
+
   .Cat-imgwrap {
       height: 180px;
+      margin: 0 auto;
   }
 
-  /* Best seller cards: keep horizontal scroll */
+  /* Best seller cards: horizontal scroll centered */
   .scards-container {
       overflow-x: auto;
       padding: 16px 0;
+      display: flex;
+      justify-content: center; /* center scroll container */
+      width: 100%;
+      margin: 0 auto;
   }
+
   .scards {
       display: flex;
       gap: 10px;
-      flex-wrap: nowrap; /* keep horizontal scroll */
-  }
-  .scard {
-      flex: 0 0 250px;  /* smaller width on mobile */
-      height: 320px;    /* adjust height */
+      flex-wrap: nowrap;
+      justify-content: flex-start; /* natural scroll */
+      width: max-content; /* allow scroll */
   }
 
-  /* Instagram images wrap */
-  .insta-Img {
-      flex-wrap: wrap;  /* wrap images */
-      gap: 5%;
+  .scard {
+      flex: 0 0 250px;
+      height: 320px;
+      margin: 0 auto;
   }
+
+  /* Instagram images wrap and center */
+  .insta-Img {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4%;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 10px;
+  }
+
   .insta-Img img {
       width: 48%;
       height: auto;
-      margin-bottom: 10px;
+      margin: 0 auto 10px auto;
+      display: block;
   }
 
-  /* Text section smaller */
+  /* Text section smaller and centered */
   .text {
       padding: 20px;
       height: auto;
+      text-align: center;
+      margin: 0 auto;
+  }
+
+  /* Footer centered and fixed width */
+  footer, 
+  .foot {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      margin: 0 auto;
+      text-align: center;
+  }
+
+  footer * {
+      max-width: 100%;
+      box-sizing: border-box;
   }
 }
