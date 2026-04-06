@@ -13,7 +13,7 @@
 
 .main{
     
-    height: auto;
+    height: 100vh;
 }
 .head{
    
@@ -52,17 +52,8 @@
     background-color: #e11c59;
     color:white;
 }
-.nav {
+.nav{
     align-items: center;
-    display: flex;
-    height: 82px;
-     padding: 0 10%;   
-    color: black;
-    margin: 0 auto; 
-    gap: 20px;
-}
-#navlinks{
-      align-items: center;
     display: flex;
     height: 82px;
      padding: 0 10%;   
@@ -461,155 +452,4 @@ position: fixed;
 bottom: 40px;
 right: 20px;
     
-}
-
-
-/* Hide hamburger on desktop by default */
-.hamburger {
-    display: none;      /* hide on desktop */
-    font-size: 28px;
-    cursor: pointer;
-    line-height: 0;     /* removes extra vertical space */
-}
-
-/* Responsive styles for mobile devices */
-
-
-/* Mobile / tablet view */
-
-@media screen and (max-width: 768px) {
-    /* Show hamburger on mobile/tablet */
-.hamburger {
-    display: block;
-}
-.nav-links {
-    position: absolute;  /* so it can float above the slider */
-    top: 82px;           /* right below your nav bar height */
-    left: 0;
-    width: 100%;
-    background-color: #fff;  /* optional: make it visible */
-    display: none;       /* still hidden initially */
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-    z-index: 9999;       /* very high so it stays on top */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* optional shadow */
-}
-.nav-links.active {
-    display: flex;
-}
-
-  /* Prevent horizontal scrolling */
-  body {
-      overflow-x: hidden;
-  }
-
-  /* Nav stack vertically and center */
-  .nav {
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px;
-      align-items: center; /* center nav items */
-      margin: 0 auto;
-      width: 100%;
-  }
-
-  /* Slider smaller and centered */
-  .slider {
-      height: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      margin: 0 auto;
-      width: 100%;
-  }
-
-  /* Category cards stack vertically and centered */
-  .icecreams {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center; /* center cards */
-      width: 100%;
-      margin: 0 auto;
-      padding: 0 10px; /* avoid sticking to edge */
-  }
-
-  .icecreams .card {
-      width: 48%;
-      height: auto;
-      margin: 0 auto; /* center each card */
-  }
-
-  .Cat-imgwrap {
-      height: 180px;
-      margin: 0 auto;
-  }
-
-  /* Best seller cards: horizontal scroll centered */
-  .scards-container {
-      overflow-x: auto;
-      padding: 16px 0;
-      display: flex;
-      justify-content: center; /* center scroll container */
-      width: 100%;
-      margin: 0 auto;
-  }
-
-  .scards {
-      display: flex;
-      gap: 10px;
-      flex-wrap: nowrap;
-      justify-content: flex-start; /* natural scroll */
-      width: max-content; /* allow scroll */
-  }
-
-  .scard {
-      flex: 0 0 250px;
-      height: 320px;
-      margin: 0 auto;
-  }
-
-  /* Instagram images wrap and center */
-  .insta-Img {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4%;
-      justify-content: center;
-      width: 100%;
-      margin: 0 auto;
-      padding: 0 10px;
-  }
-
-  .insta-Img img {
-      width: 48%;
-      height: auto;
-      margin: 0 auto 10px auto;
-      display: block;
-  }
-
-  /* Text section smaller and centered */
-  .text {
-      padding: 20px;
-      height: auto;
-      text-align: center;
-      margin: 0 auto;
-  }
-
-  /* Footer centered and fixed width */
-  footer, 
-  .foot {
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-      padding: 20px;
-      margin: 0 auto;
-      text-align: center;
-  }
-
-  footer * {
-      max-width: 100%;
-      box-sizing: border-box;
-  }
 }
