@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/style.css">
+<div class="add-container">
+
+    <div class="admin-banner">
+     Add New Product
+</div>
+
+    <form action="/admin/add" method="POST" enctype="multipart/form-data" class="add-form">
+
+        <input type="text" name="name" placeholder="Product Name" required>
+
+        <input type="number" name="price" placeholder="Price" required>
+
+        <input type="text" name="category" placeholder="Category" required>
+
+
+        <input type="number" name="stock" placeholder="Stock" required>
+
+        <input type="file" name="image" required>
+
+        <button type="submit">Add Product</button>
+
+    </form>
+
+</div>

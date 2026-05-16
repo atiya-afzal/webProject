@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/style.css">
+
+<div class="pink-banner">
+    <h1> Login</h1>
+</div>
+
+<div class="add-container">
+
+    <% if(error && error.length > 0) { %>
+        <div class="flash-error">
+            <%= error %>
+        </div>
+    <% } %>
+
+    <% if(success && success.length > 0) { %>
+        <div class="flash-success">
+            <%= success %>
+        </div>
+    <% } %>
+
+    <form action="/login" method="POST" class="add-form">
+
+        <input type="email"
+               name="email"
+               placeholder="Enter Email"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Enter Password"
+               required>
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+</div>
