@@ -95,7 +95,7 @@ role: email === "admin@gmail.com" ? "admin" : "customer"    });
     await newUser.save();
 
     req.flash("success", "Registration successful");
-    res.redirect("/");
+    res.redirect("/login");
 });
 // LOGIN PAGE
 app.get("/login", (req, res) => {
@@ -110,14 +110,14 @@ app.post("/login", async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-        req.flash("error", "User not found");
+      req.flash("error", "Invalid email or password");
         return res.redirect("/login");
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
-        req.flash("error", "Wrong password");
+          req.flash("error", "Invalid email or password");
         return res.redirect("/login");
     }
 
@@ -143,7 +143,21 @@ app.get("/logout", (req, res) => {
         res.redirect("/");
     });
 });
+// profile
+app.get("/profile", (req, res) => {
 
+    if (!req.session.user) {
+
+        req.flash("error", "Please login first");
+
+        return res.redirect("/login");
+    }
+
+    res.render("profile", {
+        user: req.session.user
+    });
+
+});
 // product routes
 app.get("/products", async (req, res) => {
 

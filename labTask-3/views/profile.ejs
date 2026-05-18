@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="admin-banner">
+    <h1>My Profile</h1>
+</div>
+
+<div class="profile-container">
+
+    <div class="profile-card">
+
+        <h2><%= user.name %></h2>
+
+        <p><b>Email:</b> <%= user.email %></p>
+
+        <p><b>Role:</b> <%= user.role %></p>
+
+        <a href="/logout" class="profile-btn">
+            Logout
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
