@@ -1,0 +1,51 @@
+
+<link rel="stylesheet" href="/style.css">
+<!-- <div class="sales-container"> -->
+
+    <h1 class="admin-banner">Sales Dashboard</h1>
+
+    <div class="sales-card">
+
+        <h2>Total Revenue</h2>
+
+        <p id="revenue">
+            Rs <%= totalRevenue %>
+        </p>
+
+    </div>
+
+    <div class="sales-card">
+
+        <h2>Total Orders</h2>
+
+        <p id="orders">
+            <%= totalOrders %>
+        </p>
+
+    </div>
+    <div class="sales-card">
+    <h2>Top Product</h2>
+    <p id="topProduct">
+        <%= topProduct ? topProduct.name : "N/A" %>
+    </p>
+</div>
+
+<!-- </div> -->
+<!-- live polling -->
+<script>
+$(document).ready(function(){
+
+    setInterval(function(){
+
+        $.getJSON("/api/sales-data", function(data){
+
+            $("#revenue").text("Rs " + data.totalRevenue);
+            $("#orders").text(data.totalOrders);
+            $("#topProduct").text(data.topProduct);
+
+        });
+
+    }, 10000);
+
+});
+</script>
