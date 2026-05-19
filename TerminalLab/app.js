@@ -450,8 +450,34 @@ app.get("/api/sales-data", async (req, res) => {
     });
 });
 // home route
-app.get("/", (req, res) => {
-    res.render("index");
+app.get("/", async (req, res) => {
+
+    const products = await Product.find().limit(6);
+    const orders = await Order.find();
+
+    let productMap = {};
+
+    // count total quantity per product
+    orders.forEach(order => {
+        productMap[order.productId] =
+            (productMap[order.productId] || 0) + order.quantity;
+    });
+
+    let topProduct = null;
+
+    if (Object.keys(productMap).length > 0) {
+
+        let topProductId = Object.keys(productMap).reduce((a, b) =>
+            productMap[a] > productMap[b] ? a : b
+        );
+
+        topProduct = await Product.findById(topProductId);
+    }
+
+    res.render("index", {
+        products,
+        topProduct
+    });
 });
 
 // server start
