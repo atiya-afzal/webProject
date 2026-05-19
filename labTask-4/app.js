@@ -158,6 +158,17 @@ app.post("/login", async (req, res) => {
 
     res.redirect("/");
 });
+app.get("/profile", (req, res) => {
+
+    if (!req.session.user) {
+        req.flash("error", "Please login first");
+        return res.redirect("/login");
+    }
+
+    res.render("profile", {
+        user: req.session.user
+    });
+});
 // api login 
 // generates the tokens after checkign if valid user
 app.post("/api/v1/auth/login", async (req, res) => {
